@@ -37,7 +37,7 @@ This project solves these by providing:
   ![showing the number of lines of courses.js file](numberOfLineForCourseJs.png)
   ![showing the html2canvas export](Exportcanvas.png)
   - **Constraints:** 
-    - courses.js is a static file with ~3702 lines (one per class slot), which could grow large and slow loading on low-end devices.
+    - courses.js is a static file with ~3656 lines (one per class slot), which could grow large and slow loading on low-end devices.
     - No real-time updates; data must be re-extracted if PDF changes.
     - Export uses html2canvas, which may fail on large calendars due to canvas size limits in browsers.
   - **Trade-offs:**
@@ -148,7 +148,7 @@ To reproduce the setup:
 ### 4.1 Defined Problems
 - **SMTP May Fail:** If adding email (e.g., via brevo in server.js), network issues or API limits could fail. Resolution: Fallback to console logs; use try-catch in fetch.
 - **MongoDB Data Safety:** No transactions in code; concurrent writes could corrupt. Resolution: Use Mongoose for schemas/validation; add indexes.
-- **calendar.js Loading from courses.js (3702 lines):** Large file slows parsing. Resolution: Lazy-load via fetch; or paginate search results.
+- **calendar.js Loading from courses.js (3656 lines):** Large file slows parsing. Resolution: Lazy-load via fetch; or paginate search results.
 - **Database Not Reachable:** Connection fails if URI wrong. Resolution: Cached connection in server.js; error handling with retries.
 - **Vercel Can't Read JSON File:** Serverless env may not persist files. Resolution: Use environment vars or upload to DB; avoid fs.readFile for large JSON.
 

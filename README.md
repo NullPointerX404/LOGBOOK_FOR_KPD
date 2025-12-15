@@ -1,51 +1,80 @@
 # LOGBOOK_FOR_KPD
 
-how to generate pdf log book
+## How to generate PDF log book
 
-for macos:go to <a href="https://github.com/jgm/pandoc/releases/download/3.8.3/pandoc-3.8.3-x86_64-macOS.pkg">macos download pandoc</a>
-and install pandoc
+---
 
-Verify installation:
-pandoc --version
+### For macOS
 
-or
+1. **Download Pandoc**  
+   Go to [macOS download pandoc](https://github.com/jgm/pandoc/releases/download/3.8.3/pandoc-3.8.3-x86_64-macOS.pkg) and install Pandoc.
 
-2 
+2. **Verify installation**  
+   ```bash
+   pandoc --version
+   ```
 
-install homebrew(if you don't have homebrew)
-type this in terminal
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+---
 
-Install Pandoc
-brew install pandoc
+#### Alternative method (Homebrew)
 
-Verify installation:
-pandoc --version
+1. **Install Homebrew** (if you don't have it):  
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
 
-Install a pdf engine:
-brew install mactex
-brew install wkhtmltopdf
+2. **Install Pandoc**  
+   ```bash
+   brew install pandoc
+   ```
 
-Example usage:
-pandoc myfile.md -o myfile.pdf (markdown->pdf)
-pandoc myfile.md -o myfile.docx (markdown->word)
-pandoc --from=latex --to=docx -o output.docx input.tex (latex->word)
+3. **Verify installation**  
+   ```bash
+   pandoc --version
+   ```
 
+4. **Install a PDF engine**  
+   ```bash
+   brew install mactex
+   brew install wkhtmltopdf
+   ```
 
-for window:
+---
 
-go to <a href="https://github.com/jgm/pandoc/releases/download/3.8.3/pandoc-3.8.3-windows-x86_64.msi">window download pandoc</a>
-and install pandoc
+#### Example usage
 
-download pdf engine (choose 1 from 2 pdf engine)
-<a href="https://miktex.org/download">miktex</a>
-<a href="https://www.tug.org/texlive/">TeX Live</a>
+```bash
+pandoc myfile.md -o myfile.pdf       # markdown -> pdf
+pandoc myfile.md -o myfile.docx      # markdown -> word
+pandoc --from=latex --to=docx -o output.docx input.tex   # latex -> word
+```
 
-Verify installation:
-pandoc --version
+---
 
+### For Windows
 
+1. **Download Pandoc**  
+   Go to [Windows download pandoc](https://github.com/jgm/pandoc/releases/download/3.8.3/pandoc-3.8.3-windows-x86_64.msi) and install Pandoc.
+
+2. **Download a PDF engine** (choose one):  
+   - [MiKTeX](https://miktex.org/download)  
+   - [TeX Live](https://www.tug.org/texlive/)
+
+3. **Verify installation**  
+   ```bash
+   pandoc --version
+   ```
+
+---
+
+#### Example usage
+
+```bash
 pandoc myfile.md -o myfile.pdf
 pandoc myfile.md -o myfile.docx
 pandoc myfile.docx -o myfile.md
+```
+```
+
+---
 

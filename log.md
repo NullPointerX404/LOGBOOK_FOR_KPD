@@ -21,29 +21,24 @@ The core problem this project addresses is the chaos and inefficiency students f
 
 This project solves these by providing:
 ![showing the calendar](calendar.png)
-calendar
 - A **timetable planner** (calendar.html/js) that allows drag-and-drop class scheduling from a searchable list, with visual conflict detection and PNG export.
 ![showing the frontpage](frontpage.png)
-front page
 - A **learning platform** for course viewing/editing, account management, admin approvals.
 ![showing the coursedata](coursedata.png)
-course data
 - Integration with extracted course data from PDFs, making scheduling dynamic and data-driven.
 **Evolving Understanding:** Initially, the focus was on timetable planning alone, but it expanded to a full platform after realizing scheduling ties into course management (e.g., viewing materials, timetables per course).
 
 ### 1.2 Breakdown of Current Solution
 - **Timetable Planner (calendar.html, calendar.js, courses.js):**
 ![showing the ext.py file](extpy.png)
-ext.py
 ![showing the ext2.py file](extpy2.png)
-ext2.py
 ![showing the merge.py file](mergepy.png)
-merge.py
+  
   - **Approach:** Uses FullCalendar library for a drag-and-drop calendar. Courses are pre-extracted from PDF into a JS array (courses.js) via Python scripts (ext.py, ext2_1.py, merge.py). Search filters courses dynamically; drag adds them to the calendar with conflict checks.
   ![showing the number of lines of courses.js file](numberOfLineForCourseJs.png)
   NUmber of line of course.js file
   ![showing the html2canvas export](Exportcanvas.png)
-  EXoprt canvas
+  
   - **Constraints:** 
     - courses.js is a static file with ~3656 lines (one per class slot), which could grow large and slow loading on low-end devices.
     - No real-time updates; data must be re-extracted if PDF changes.
@@ -56,7 +51,7 @@ merge.py
     - **Server-Side Rendering:** Could use Node to generate SVG timetables, but increases server load; client-side is faster for users.
     - **Mobile App (React Native):** Better for offline use, but project scope is web-only; adds cross-platform complexity.
 ![showing mongodb storage](MOngoDBStorage.png)
-mongodb storage
+
 - **Learning Platform (Mainpage.html, server.js, etc.):**
   - **Approach:** Backend handles auth, course CRUD, file uploads (multer), and MongoDB storage. Frontend uses forms for login/account creation, tabs for course viewing.
   - **Constraints:** Static HTML limits interactivity (no React for state management).

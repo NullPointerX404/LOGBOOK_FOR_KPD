@@ -71,7 +71,7 @@ This project solves these by providing:
 ### 2.1 Chosen Stack: MERN (Modified)
 - **MongoDB:** NoSQL database for flexible schemas (e.g., courses with variable fields like timetables).
 - **Express.js/Node.js:** Backend server for APIs, auth, file handling.
-- **React:** Not fully used; frontend is vanilla JS/HTML/CSS with libraries (FullCalendar, PDF.js). (Note: Files suggest MEAN-like, but user specified MERN; assuming React could be added.)
+- **React:** Not fully used; frontend is vanilla JS/HTML/CSS with libraries (FullCalendar, PDF.js).
 - **Node.js Runtime:** For server.
 
 **Why MERN?**
